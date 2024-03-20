@@ -1,0 +1,29 @@
+{% extends 'admin.html' %}
+
+{% block title %}Página Específica - My Website{% endblock %}
+
+{% block content %}
+    <div class="contenido" id="perfil">
+        <h2>Datos del Usuario</h2>
+        <p><strong>Correo Electrónico:</strong> <span id="correo">admin@admin.com</span></p>
+        <p><strong>Clave:</strong> 
+            <span>
+                <input type="password" id="clave" value="password" readonly>
+                <button onclick="mostrarClave()">Mostrar</button>
+            </span>
+        </p>
+        <button onclick="editarPerfil()">Editar</button>
+    </div>
+
+    <div id="formularioEditar" style="display: none;">
+        <h2>Editar Perfil</h2>
+        <form>
+            <label for="nuevoCorreo">Nuevo Correo Electrónico:</label><br>
+            <input type="email" id="nuevoCorreo" name="nuevoCorreo"><br>
+            <label for="nuevaClave">Nueva Clave:</label><br>
+            <input type="password" id="nuevaClave" name="nuevaClave"><br><br>
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="cancelarEdicion()">Cancelar</button>
+        </form>
+    </div>
+{% endblock %}
